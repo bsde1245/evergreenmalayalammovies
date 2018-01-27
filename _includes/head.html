@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
-  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
   {% if jekyll.environment == 'production' and site.google_analytics %}
   {% include google-analytics.html %}
   {% endif %}
@@ -28,6 +28,13 @@
 <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
 <script src="/js/footer.js"></script>
 <script src="http://afarkas.github.io/lazysizes/lazysizes.min.js" async=""></script>
+<script src="/js/ekko-lightbox.min.js"></script>
+<script type="text/javascript">
+	$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+</script>
 <script>
     var tag = document.createElement('script');
     tag.src = "//www.youtube.com/iframe_api";
@@ -100,6 +107,10 @@
         background: #000;
         margin: 5px;
     }
+.youtube {
+  width: 100%    !important;
+  height: auto   !important;
+}
     
     .youtube-player iframe {
         position: absolute;
