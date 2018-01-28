@@ -4,11 +4,10 @@ layout: default_bootstrap
 
 <div class="home">
 <div class="panel panel-default text-center">
-  <div class="panel-heading">
-  <h1 class="page-heading">Posts</h1>
+  
   
   {{ content }}
-</div>
+
 
   <div class="panel-body">
   <ul class="post-list">
@@ -17,10 +16,10 @@ layout: default_bootstrap
 
         {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
         <span style="font-size: 18px;">
-          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          {{ post.title | escape }}
         </span>&bull;
  <span  class="post-meta">{{ post.date | date: date_format }}</span>
-<hr>
+{{ post.content }}
       </li>
     {% endfor %}
   </ul>
